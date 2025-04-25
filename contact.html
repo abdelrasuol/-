@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تواصل معنا - سوق الزهجان</title>
+  <style>
+    body { font-family: sans-serif; background: #f8f8f8; padding: 20px; }
+    nav { text-align: center; margin-bottom: 20px; }
+    nav a { margin: 0 10px; text-decoration: none; color: #008060; font-weight: bold; }
+    form { max-width: 500px; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    label { display: block; margin: 10px 0 5px; }
+    input, textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    button { margin-top: 15px; padding: 10px 20px; background-color: #008060; color: white; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background-color: #005e47; }
+  </style>
+</head>
+<body>
+  <script>
+    if (!localStorage.getItem('loggedIn')) {
+      window.location.href = 'login.html';
+    }
+  </script>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="products.html">المنتجات</a>
+    <a href="contact.html">تواصل معنا</a>
+    <a href="dashboard.html">لوحة التاجر</a>
+  </nav>
+  <form>
+    <label>اسمك:</label>
+    <input type="text" required>
+    <label>رقم الهاتف:</label>
+    <input type="text" required>
+    <label>رسالتك:</label>
+    <textarea rows="5" required></textarea>
+    <button type="submit">إرسال</button>
+  </form>
+</body>
+</html>

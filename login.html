@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>تسجيل الدخول - سوق الزهجان</title>
+  <style>
+    body { font-family: sans-serif; background: #f2f2f2; padding: 20px; }
+    .login-box { max-width: 400px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+    h1 { text-align: center; }
+    label { display: block; margin: 10px 0 5px; }
+    input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 8px; }
+    button { margin-top: 15px; padding: 10px 20px; background-color: #007b5e; color: white; border: none; border-radius: 8px; cursor: pointer; width: 100%; }
+    button:hover { background-color: #005e47; }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h1>تسجيل الدخول</h1>
+    <form onsubmit="login(event)">
+      <label for="username">اسم المستخدم:</label>
+      <input type="text" id="username" required>
+      <label for="password">كلمة المرور:</label>
+      <input type="password" id="password" required>
+      <button type="submit">دخول</button>
+    </form>
+  </div>
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const user = document.getElementById('username').value;
+      const pass = document.getElementById('password').value;
+      if (user && pass) {
+        localStorage.setItem('loggedIn', 'true');
+        window.location.href = 'index.html';
+      }
+    }
+  </script>
+</body>
+</html>
